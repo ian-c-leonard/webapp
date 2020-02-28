@@ -21,7 +21,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- publish: $(System.DefaultWorkingDirectory)/bin/WebApp
+- publish: $(System.DefaultWorkingDirectory)
 - task: Veracode@2
   inputs:
     ConnectionDetailsSelection: 'Credentials'
@@ -29,7 +29,7 @@ steps:
     password: 'db38c78aac0fd8513733b3968f31ebc59bc8d4078f2438f1dd2272a51aac13d66e6fb78e82af55aaa2f0098a0423dd77395e94e83c5f4c597dddc654e8b43a5b'
     veracodeAppProfile: 'Ian CircleCI Test App'
     version: '$(build.buildNumber)'
-    filepath: '$(System.DefaultWorkingDirectory)/bin/WebApp'
+    filepath: '$(System.DefaultWorkingDirectory)'
     createSandBox: false
     createProfile: false
     failTheBuildIfVeracodeScanDidNotInitiate: false
