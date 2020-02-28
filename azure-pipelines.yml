@@ -25,8 +25,8 @@ steps:
 - task: Veracode@2
   inputs:
     ConnectionDetailsSelection: 'Credentials'
-    username: 'beced42522e1e6452c13869ae30bb78c'
-    password: 'db38c78aac0fd8513733b3968f31ebc59bc8d4078f2438f1dd2272a51aac13d66e6fb78e82af55aaa2f0098a0423dd77395e94e83c5f4c597dddc654e8b43a5b'
+    username: 'f2d521a7b36f191e0d97daaa0efe1a7b'
+    password: 'e386ce7ca48b66742111f5645de7cd365aec028237ac8956e5156c34e4a335da3c12a00bd1a6916ef90d707eb34a013c7512349f6f695afd7fc9e79e15a5c33e'
     veracodeAppProfile: 'Ian CircleCI Test App'
     version: '$(build.buildNumber)'
     filepath: '$(System.DefaultWorkingDirectory)'
