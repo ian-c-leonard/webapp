@@ -1,4 +1,5 @@
 # Maven
+
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -20,3 +21,17 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: Veracode@2
+  inputs:
+    ConnectionDetailsSelection: 'Credentials'
+    username: 'beced42522e1e6452c13869ae30bb78c'
+    password: 'db38c78aac0fd8513733b3968f31ebc59bc8d4078f2438f1dd2272a51aac13d66e6fb78e82af55aaa2f0098a0423dd77395e94e83c5f4c597dddc654e8b43a5b'
+    veracodeAppProfile: '$(system.teamProject)'
+    version: '$(build.buildNumber)'
+    filepath: '$(build.artifactstagingdirectory)'
+    createSandBox: false
+    createProfile: false
+    failTheBuildIfVeracodeScanDidNotInitiate: false
+    scanStatusCheckInterval: '60'
+    importResults: true
+    failBuildOnPolicyFail: false
