@@ -24,9 +24,8 @@ steps:
 - publish: $(System.DefaultWorkingDirectory)
 - task: Veracode@2
   inputs:
-    ConnectionDetailsSelection: 'Credentials'
-    username: 'f2d521a7b36f191e0d97daaa0efe1a7b'
-    password: 'e386ce7ca48b66742111f5645de7cd365aec028237ac8956e5156c34e4a335da3c12a00bd1a6916ef90d707eb34a013c7512349f6f695afd7fc9e79e15a5c33e'
+    ConnectionDetailsSelection: 'Endpoint'
+    AnalysisService: 'Veracode API'
     veracodeAppProfile: 'Ian CircleCI Test App'
     version: '$(build.buildNumber)'
     filepath: '$(System.DefaultWorkingDirectory)'
