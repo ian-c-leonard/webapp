@@ -8,4 +8,4 @@ before_install:
 
 script:
 - mvn clean package
-- java -jar vosp-api-wrappers-java-19.2.5.6.jar -vid $VERACODE_API_ID -vkey $VERACODE_API_KEY -action uploadandscan -appname "Ian CircleCI Test App" -createprofile false -filepath /home/travis/build/ian-c-leonard/webapp/target/WebApp.war -version "$TRAVIS_JOB_ID - $TRAVIS_JOB_NUMBER $DATE" -scantimeout 3600
+- java -jar vosp-api-wrappers-java-19.2.5.6.jar -vid $VERACODE_API_ID -vkey $VERACODE_API_KEY -action uploadandscan -appname "Ian CircleCI Test App" -createprofile false -filepath /home/travis/build/ian-c-leonard/webapp/target/WebApp.war -version "$TRAVIS_JOB_ID - $TRAVIS_JOB_NUMBER $DATE"
